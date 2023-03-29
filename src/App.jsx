@@ -10,12 +10,11 @@ const pokemonList = [
     name: "mew",
   },
 ];
-const onePokemonFromTheList = pokemonList[0];
 
 function App() {
   return (
     <div>
-      <PokemonCard pokemon={onePokemonFromTheList} />
+      <PokemonCard pokemon={pokemonList[0]} />
     </div>
   );
 }
