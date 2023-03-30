@@ -37,17 +37,22 @@ function App() {
   };
 
   const nextClick = () => {
-    if (count < pokemonList.length-1) {
+    if (count < pokemonList.length - 1) {
       setCount(count + 1);
     }
   };
   return (
     <div>
       <PokemonCard pokemon={pokemonList[count]} />
-      <button onClick={pastClick}>Précédent</button>
-      <button onClick={nextClick}>Suivant</button>
+      {count > 0 ? <button onClick={pastClick}>Précédent</button> : <></>}
+      {count < pokemonList.length - 1 ? (
+        <button onClick={nextClick}>Suivant</button>
+      ) : (
+        <></>
+      )}
+
       <p>
-        {count+1}/{pokemonList.length}
+        {count + 1}/{pokemonList.length}
       </p>
     </div>
   );
