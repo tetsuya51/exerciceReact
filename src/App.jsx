@@ -1,4 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 import { useState } from "react";
 
 const pokemonList = [
@@ -41,11 +42,12 @@ function App() {
       setCount(count + 1);
     }
   };
+
+  
   return (
     <div>
       <PokemonCard pokemon={pokemonList[count]} />
-      <button onClick={pastClick}>Précédent</button>
-      <button onClick={nextClick}>Suivant</button>
+      <NavBar pastClick={pastClick} nextClick={nextClick}/>
       <p>
         {count+1}/{pokemonList.length}
       </p>
