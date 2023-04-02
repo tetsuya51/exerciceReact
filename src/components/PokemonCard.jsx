@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 function PokemonCard({ pokemon }) {
   return (
     <figure>
-      {pokemon.imgSrc != null ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name} />
-      ) : (
+      {pokemon.imgSrc == null ? (
         <p>???</p>
+      ) : (
+        <img src={pokemon.imgSrc} alt={pokemon.name} />
       )}
       <figcaption>{pokemon.name}</figcaption>
     </figure>
